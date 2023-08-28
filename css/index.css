@@ -518,3 +518,15 @@ a {
   display: flex;
   padding: 120px 156px 120px 156px;
 }
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) scale(0) rotate(0)
+    skew(40deg, 40deg);
+}
+.modal {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+}
