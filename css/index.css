@@ -522,11 +522,37 @@ a {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(-50%) translateY(-50%) scale(0) rotate(0)
-    skew(40deg, 40deg);
 }
 .modal {
-  width: 150px;
-  height: 150px;
-  background-color: white;
+  display: flex;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  background: var(--dairy, #fcfcfc);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.backdrop {
+  position: fixed;
+  top: o;
+  left: 0;
+  width: 1440px;
+  height: 677px;
+
+  background: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
+}
+.close-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--modal-background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
 }
