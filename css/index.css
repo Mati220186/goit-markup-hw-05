@@ -76,6 +76,9 @@ a {
   font-size: 16px;
   letter-spacing: 0.02em;
 }
+.mark {
+  color: var(--pressed-state);
+}
 .mark::after {
   content: "";
   display: block;
@@ -86,6 +89,7 @@ a {
   background-color: var(--pressed-state);
   border-radius: 2px;
 }
+
 .nav:hover,
 .nav:focus {
   color: var(--primary-brand);
@@ -595,8 +599,8 @@ a {
   transform: translateY(100%);
   background-color: var(--primary-brand);
 }
-.box:hover .overlay,
-.box:focus .overlay {
+.container-portfolio-card:hover .overlay,
+.container-portfolio-card:focus .overlay {
   transform: translateY(0);
   transition: 250ms ease-in-out;
 }
