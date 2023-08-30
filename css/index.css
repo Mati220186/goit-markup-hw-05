@@ -12,6 +12,7 @@
   --modal-background: #fcfcfc;
   --border-customers: #8e8f99;
   --main-font: Roboto, sans-serif;
+  --animation-transition: 250ms cubic-brezier (0.4, 0, 0.2, 1);
 }
 * {
   box-sizing: border-box;
@@ -123,6 +124,7 @@ a {
 .button-service:hover,
 .button-service:focus {
   background-color: var(--pressed-state);
+  transition: var(--animation-transition);
 }
 .section-title {
   color: var(--navyblue, #2e2f42);
@@ -163,8 +165,6 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   cursor: pointer;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   /*button-text :button-item*/
   display: flex;
@@ -180,11 +180,10 @@ a {
 .button-item:focus {
   color: var(--cloud);
   background-color: var(--primary-brand);
-  box-shadow: 0px 2px 2px 0px #0000001f;
-
-  box-shadow: 0px 2px 1px 0px #00000014;
-
-  box-shadow: 0px 3px 1px 0px #0000001a;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--link-active);
+  transition: var(--animation-transition);
 }
 /*text under pictures*/
 .text-content {
@@ -205,6 +204,7 @@ a {
 .adres:hover,
 .adres:focus {
   color: var(--primary-brand);
+  transition: var(--animation-transition);
 }
 .footer {
   display: flex;
@@ -370,6 +370,7 @@ a {
   box-shadow: 0px 1px 1px 0px rgba(46, 47, 66, 0.26);
   box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.18);
   cursor: pointer;
+  transition: var(--animation-transition);
 }
 .container-portfolio {
   max-width: 1128px;
@@ -447,11 +448,13 @@ a {
 .social-icon-circle:focus {
   background-color: var(--pressed-state);
   cursor: pointer;
+  transition: var(--animation-transition);
 }
 .footer-social-icon-circle:hover,
 .footer-social-icon-circle:focus {
   background-color: var(--success);
   cursor: pointer;
+  transition: var(--animation-transition);
 }
 .social-icon {
   width: 16px;
@@ -476,6 +479,7 @@ a {
 .customers-box:hover,
 .customers-box:focus {
   cursor: pointer;
+  transition: var(--animation-transition);
 }
 .customers-hover {
   width: 168px;
@@ -488,6 +492,7 @@ a {
 .customers-hover:focus {
   fill: var(--pressed-state);
   border: 1px solid var(--pressed-state);
+  transition: var(--animation-transition);
 }
 .customers-box:last-child {
   margin-right: 0;
@@ -536,16 +541,17 @@ a {
 .backdrop {
   display: flex;
   position: fixed;
-  top: o;
+  width: 100%;
+  height: 100%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   justify-content: center;
   background-color: hsla(237, 18%, 22%, 0.4);
 }
-.close-btn {
+.close-btn-box {
   display: flex;
-  align-items: center;
   position: absolute;
   top: 8px;
   right: 8px;
@@ -555,4 +561,41 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  fill: var(--hero-background);
+  align-items: center;
+  justify-content: center;
+}
+.close-btn {
+  width: 8px;
+  height: 8px;
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  background-color: var(--primary-brand);
+}
+.box:hover .overlay,
+.box:focus .overlay {
+  transform: translateY(0);
+  transition: 250ms ease-in-out;
+}
+.overlay p {
+  width: 296px;
+  padding-top: 40px;
+  padding-left: 32px;
+  color: var(--cloud, #f4f4fd);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
 }
